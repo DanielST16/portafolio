@@ -56,7 +56,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug')->unique();
+            // $table->string('slug')->unique();
             $table->text('content');
             $table->string('image')->nullable();
             $table->string('status')->default('draft'); // draft, published, etc.

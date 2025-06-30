@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Portafolio | Daniel')
+@section('title', 'Contact | Daniel')
 
 @section('content')
     <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-bold mb-4">Mis desarrollos</h1>
+        <h1 class="text-3xl font-bold mb-4">Contactame</h1>
     </div>
 @endsection
