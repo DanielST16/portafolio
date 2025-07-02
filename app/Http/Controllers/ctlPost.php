@@ -23,6 +23,13 @@ class ctlPost extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'required|unique:posts',
+            'content' => 'required',
+        ]);
+
         Post::create($request->all());
 
         return redirect()->route('posts.index');
@@ -35,6 +42,12 @@ class ctlPost extends Controller
 
     public function update(Request $request, Post $post)
     {
+        $request->validate([
+            'title' => 'required',
+            'slug' => "required|unique:posts,slug,{$post->id}",
+            'content' => 'required',
+        ]);
+
         $post->update($request->all());
         return redirect()->route('posts.show', $post);
     }
