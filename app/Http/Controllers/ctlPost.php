@@ -23,11 +23,9 @@ class ctlPost extends Controller
 
     public function store(Request $request)
     {
-        $post = new Post();
-        $post->title = $request->input('title');
-        $post->content = $request->input('content');
-        $post->save();
-        return redirect('/posts');
+        Post::create($request->all());
+
+        return redirect()->route('posts.index');
     }
 
     public function edit(Post $post)
@@ -37,16 +35,14 @@ class ctlPost extends Controller
 
     public function update(Request $request, Post $post)
     {
-        $post->title = $request->input('title');
-        $post->content = $request->input('content');
-        $post->save();
-        return redirect('/posts/' . $post->id);
+        $post->update($request->all());
+        return redirect()->route('posts.show', $post);
     }
 
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect('/posts');
+        return redirect()->route('posts.index');
     }
 
     public function show(Post $post)

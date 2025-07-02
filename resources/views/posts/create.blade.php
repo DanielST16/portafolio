@@ -3,16 +3,29 @@
 @section('title', 'Contact | Daniel')
 
 @section('content')
+
+    <a href="{{ route('posts.index') }}"
+        class="inline-block bg-blue-600 hover:bg-blue-700 text-black font-semibold py-2 px-4 rounded transition-colors duration-200">
+        Volver a la lista de posts
+    </a>
+
+
     <div class="container mx-auto p-4">
+        
         <h1 class="text-3xl font-bold mb-4">Nuevo post</h1>
 
-        <form action="/posts" method="POST" class="bg-white p-6 rounded shadow-md">
+        <form action="{{ route('posts.index') }}" method="POST" class="bg-white p-6 rounded shadow-md">
 
             @csrf
 
             <div class="mb-4">
                 <label for="title" class="block text-sm font-medium text-gray-700">Título</label>
                 <input type="text" id="title" name="title" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            </div>
+
+            <div class="mb-4">
+                <label for="title" class="block text-sm font-medium text-gray-700">Slug</label>
+                <input type="text" id="slug" name="slug" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500">
             </div>
 
             <div class="mb-4">

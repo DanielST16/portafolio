@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <a href="/posts"
+    <a href="{{ route('posts.index') }}"
         class="inline-block bg-blue-600 hover:bg-blue-700 text-black font-semibold py-2 px-4 rounded transition-colors duration-200">
         Volver a la lista de posts
     </a>
@@ -14,10 +14,10 @@
 
         <p>{{$post->content}}</p>
 
-        <a href="/posts/{{$post->id}}/edit" class="inline-block bg-blue-600 hover:bg-blue-700 text-black font-semibold py-2 px-4 rounded transition-colors duration-200">
+        <a href="{{ route('posts.edit', $post) }}" class="inline-block bg-blue-600 hover:bg-blue-700 text-black font-semibold py-2 px-4 rounded transition-colors duration-200">
             Editar
         </a>
-        <form action="/posts/{{$post->id}}" method="POST">
+        <form action="{{ route('posts.destroy', $post) }}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="inline-block bg-blue-600 hover:bg-blue-700 text-black font-semibold py-2 px-4 rounded transition-colors duration-200">

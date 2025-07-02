@@ -18,7 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
-            // 'slug' => fake()->unique()->slug(),
+            'slug' => fake()->unique()->slug(),
             'content' => fake()->text(500),
             'published_at' => fake()->dateTimeBetween('-1 year', 'now')
         ];

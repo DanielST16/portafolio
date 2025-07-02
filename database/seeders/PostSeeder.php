@@ -15,6 +15,7 @@ class PostSeeder extends Seeder
     {
         $post = new Post();
         $post->title = 'Primer Post';
+        $post->slug = 'primer-post';
         $post->content = 'Contenido del primer post';
         $post->save();
         Post::factory(18)->create();

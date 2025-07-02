@@ -5,11 +5,11 @@
                 <a href="/" class="text-xl font-bold text-gray-900">Daniel Sierra</a>
             </div>
             <nav class="space-x-4">
-                <a href="/" class="text-gray-700 hover:text-blue-500 transition">Home</a>
-                <a href="about" class="text-gray-700 hover:text-blue-500 transition">About Me</a>
-                <a href="portafolio" class="text-gray-700 hover:text-blue-500 transition">Portafolio</a>
-                <a href="posts" class="text-gray-700 hover:text-blue-500 transition">Posts</a>
-                <a href="contact" class="text-gray-700 hover:text-blue-500 transition">Contact</a>
+                <a href="{{ route('home') }}" class="text-gray-700 hover:text-blue-500 transition">Home</a>
+                <a href="{{ route('about') }}" class="text-gray-700 hover:text-blue-500 transition">About Me</a>
+                <a href="{{ route('portafolio') }}" class="text-gray-700 hover:text-blue-500 transition">Portafolio</a>
+                <a href="{{ route('posts.index') }}" class="text-gray-700 hover:text-blue-500 transition">Posts</a>
+                <a href="{{ route('contact') }}" class="text-gray-700 hover:text-blue-500 transition">Contact</a>
             </nav>
         </div>
     </div>
